@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_pages",
+  "info": {
+    "singularName": "about-page",
+    "pluralName": "about-pages",
+    "displayName": "About Page",
+    "description": "Dynamic content for the About Us page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "sections.about-hero",
+        "sections.story-section",
+        "sections.history-section",
+        "sections.mission-vision",
+        "sections.partners-wrapper",
+        "sections.process-wrapper",
+        "sections.values-section",
+        "sections.farm-wrapper",
+        "sections.cta-section"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

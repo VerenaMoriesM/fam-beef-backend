@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_method_steps",
+  "info": {
+    "displayName": "Method Step",
+    "icon": "orderedList"
+  },
+  "options": {},
+  "attributes": {
+    "step": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

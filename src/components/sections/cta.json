@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_ctas",
+  "info": {
+    "displayName": "CTA",
+    "icon": "megaphone"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}

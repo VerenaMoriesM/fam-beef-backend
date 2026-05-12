@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_farm_wrappers",
+  "info": {
+    "displayName": "Farm Wrapper",
+    "icon": "home"
+  },
+  "options": {},
+  "attributes": {
+    "hideCtaCard": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideKnowMore": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFarmsPage": {
+      "type": "boolean",
+      "default": false
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

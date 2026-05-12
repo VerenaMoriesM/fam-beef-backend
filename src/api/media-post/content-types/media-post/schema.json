@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_posts",
+  "info": {
+    "singularName": "media-post",
+    "pluralName": "media-posts",
+    "displayName": "Media Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::media-category.media-category",
+      "inversedBy": "media_posts"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.content-block"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_history_sections",
+  "info": {
+    "displayName": "History Section",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.history-item"
+    }
+  }
+}

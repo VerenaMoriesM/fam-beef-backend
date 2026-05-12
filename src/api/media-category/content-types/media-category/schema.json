@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_categories",
+  "info": {
+    "singularName": "media-category",
+    "pluralName": "media-categories",
+    "displayName": "Media Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "media_posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::media-post.media-post",
+      "mappedBy": "category"
+    }
+  }
+}

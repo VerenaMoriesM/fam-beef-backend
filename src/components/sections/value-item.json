@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_value_items",
+  "info": {
+    "displayName": "Value Item",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["card", "image"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "icon": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_values_sections",
+  "info": {
+    "displayName": "Values Section",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "values": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.value-item"
+    }
+  }
+}

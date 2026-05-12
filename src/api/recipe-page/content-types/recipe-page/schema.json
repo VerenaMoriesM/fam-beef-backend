@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "recipe_pages",
+  "info": {
+    "singularName": "recipe-page",
+    "pluralName": "recipe-pages",
+    "displayName": "Recipes Page",
+    "description": "Configuration for the Recipes listing page header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "breadcrumb": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

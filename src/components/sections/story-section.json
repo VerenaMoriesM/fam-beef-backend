@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_story_sections",
+  "info": {
+    "displayName": "Story Section",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "description": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.stat-item"
+    }
+  }
+}

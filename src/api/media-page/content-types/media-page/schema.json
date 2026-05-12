@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "media_pages",
+  "info": {
+    "singularName": "media-page",
+    "pluralName": "media-pages",
+    "displayName": "Media Center Page",
+    "description": "Configuration for the Media Center listing page header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "breadcrumb": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}
