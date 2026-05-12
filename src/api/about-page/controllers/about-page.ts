@@ -1,7 +1,12 @@
-/**
- * about-page controller
- */
+import { factories } from '@strapi/strapi';
 
-import { factories } from '@strapi/strapi'
-
-export default factories.createCoreController('api::about-page.about-page');
+export default factories.createCoreController('api::about-page.about-page', () => ({
+  async find(ctx) {
+    ctx.query = { populate: '*', ...ctx.query };
+    return super.find(ctx);
+  },
+  async findOne(ctx) {
+    ctx.query = { populate: '*', ...ctx.query };
+    return super.findOne(ctx);
+  },
+}));
