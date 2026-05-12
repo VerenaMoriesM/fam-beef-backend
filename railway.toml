@@ -1,8 +1,9 @@
 [build]
 builder = "NIXPACKS"
+buildCommand = "npm ci --omit=dev=false && NODE_OPTIONS=--max-old-space-size=2048 npm run build"
 
 [deploy]
-startCommand = "npm run build && npm run start"
+startCommand = "npm run start"
 healthcheckPath = "/_health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
