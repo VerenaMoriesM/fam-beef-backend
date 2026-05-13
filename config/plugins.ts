@@ -9,15 +9,13 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   },
   upload: {
     config: {
-      provider: 'cloudinary',
+      provider: 'strapi-provider-upload-cloudflare-r2',
       providerOptions: {
-        cloud_name: env('CLOUDINARY_NAME'),
-        api_key: env('CLOUDINARY_KEY'),
-        api_secret: env('CLOUDINARY_SECRET'),
-      },
-      actionOptions: {
-        upload: {},
-        delete: {},
+        accessKeyId: env('R2_ACCESS_KEY_ID'),
+        secretAccessKey: env('R2_ACCESS_SECRET'),
+        accountId: env('CLOUDFLARE_ACCOUNT_ID'),
+        bucket: env('R2_BUCKET'),
+        publicDomain: env('R2_PUBLIC_URL'),
       },
     },
   },

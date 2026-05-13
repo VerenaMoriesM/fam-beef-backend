@@ -9,9 +9,9 @@ const config = ({ env }): Core.Config.Middlewares => [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https:'],
-          'media-src': ["'self'", 'data:', 'blob:', 'https:'],
+          'connect-src': ["'self'", 'https:', '*.r2.cloudflarestorage.com'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https:', '*.r2.cloudflarestorage.com', '*.r2.dev'],
+          'media-src': ["'self'", 'data:', 'blob:', 'https:', '*.r2.cloudflarestorage.com', '*.r2.dev'],
           upgradeInsecureRequests: null,
         },
       },
