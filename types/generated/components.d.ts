@@ -384,6 +384,18 @@ export interface SectionsIngredientsSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsLegalSection extends Struct.ComponentSchema {
+  collectionName: 'components_sections_legal_sections';
+  info: {
+    displayName: 'Legal Section';
+    icon: 'file';
+  };
+  attributes: {
+    body: Schema.Attribute.Text & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsMethodStep extends Struct.ComponentSchema {
   collectionName: 'components_sections_method_steps';
   info: {
@@ -561,6 +573,7 @@ declare module '@strapi/strapi' {
       'sections.history-item': SectionsHistoryItem;
       'sections.history-section': SectionsHistorySection;
       'sections.ingredients-section': SectionsIngredientsSection;
+      'sections.legal-section': SectionsLegalSection;
       'sections.method-step': SectionsMethodStep;
       'sections.mission-vision': SectionsMissionVision;
       'sections.overview': SectionsOverview;

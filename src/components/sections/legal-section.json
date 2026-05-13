@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_legal_sections",
+  "info": {
+    "displayName": "Legal Section",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

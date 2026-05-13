@@ -20,6 +20,8 @@ import {
   SEED_CONTACT_PAGE,
   SEED_NAVBAR_SETTING,
   SEED_FOOTER_SETTING,
+  SEED_TERMS_PAGE,
+  SEED_PRIVACY_PAGE,
 } from './seed-data';
 
 export default {
@@ -320,6 +322,36 @@ export default {
     } else {
       await strapi.documents('api::contact-page.contact-page').create({
         data: SEED_CONTACT_PAGE,
+        status: 'published',
+      });
+    }
+
+    // Terms Page (Single Type)
+    const termsPage = await strapi.documents('api::terms-page.terms-page').findFirst();
+    if (termsPage) {
+      await strapi.documents('api::terms-page.terms-page').update({
+        documentId: termsPage.documentId,
+        data: SEED_TERMS_PAGE,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::terms-page.terms-page').create({
+        data: SEED_TERMS_PAGE,
+        status: 'published',
+      });
+    }
+
+    // Privacy Page (Single Type)
+    const privacyPage = await strapi.documents('api::privacy-page.privacy-page').findFirst();
+    if (privacyPage) {
+      await strapi.documents('api::privacy-page.privacy-page').update({
+        documentId: privacyPage.documentId,
+        data: SEED_PRIVACY_PAGE,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::privacy-page.privacy-page').create({
+        data: SEED_PRIVACY_PAGE,
         status: 'published',
       });
     }

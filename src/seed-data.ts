@@ -739,6 +739,68 @@ export const SEED_FOOTER_SETTING = {
   companyName: "Fam Beef",
 };
 
+export const SEED_TERMS_PAGE = {
+  badge: "Legal",
+  title: "Terms of",
+  titleHighlight: "Service",
+  description:
+    "Please review our terms of service to understand the agreement between you and Fam Beef regarding the use of our services.",
+  sections: [
+    {
+      title: "Agreement to Terms",
+      body: "By accessing or using Fam Beef's services, you agree to be bound by these Terms of Service. These terms apply to all visitors, users, and others who access or use the Service.",
+    },
+    {
+      title: "Intellectual Property",
+      body: "The Service and its original content, features, and functionality are and will remain the exclusive property of Fam Beef and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Fam Beef.",
+    },
+    {
+      title: "Termination",
+      body: "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.",
+    },
+    {
+      title: "Governing Law",
+      body: "These Terms shall be governed and construed in accordance with the laws of Egypt, without regard to its conflict of law provisions.",
+    },
+  ],
+  seo: {
+    metaTitle: "Terms of Service | FAM Beef",
+    metaDescription:
+      "Review the terms of service that govern your use of FAM Beef's website and services.",
+  },
+};
+
+export const SEED_PRIVACY_PAGE = {
+  badge: "Legal",
+  title: "Privacy",
+  titleHighlight: "Policy",
+  description:
+    "Your trust is our priority. This policy explains how we protect your personal data and respect your privacy throughout your journey with Fam Beef.",
+  sections: [
+    {
+      title: "Introduction",
+      body: "At Fam Beef, we are committed to protecting the privacy of our customers and visitors. This policy describes how we collect, use, and safeguard your information when you interact with our website, products, and services.",
+    },
+    {
+      title: "Information Collection",
+      body: "We collect information that helps us provide a better experience for you. This includes direct information you provide when registering, ordering, or contacting us (name, email, phone, address), as well as usage data such as IP address, browser type, and page interactions.",
+    },
+    {
+      title: "Data Security",
+      body: "We implement industry-standard security measures to ensure the safety of your personal information. Your data is stored on secure servers and access is limited to authorized personnel only.",
+    },
+    {
+      title: "Your Rights",
+      body: "You have the right to access, correct, or delete your personal information at any time. If you wish to exercise these rights, please reach out to our privacy team.",
+    },
+  ],
+  seo: {
+    metaTitle: "Privacy Policy | FAM Beef",
+    metaDescription:
+      "Learn how FAM Beef collects, uses, and protects your personal data.",
+  },
+};
+
 export const SEED_CONTACT_PAGE = {
   hero: {
     badge: "Contact Us",
