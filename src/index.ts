@@ -24,17 +24,48 @@ import {
   SEED_PRIVACY_PAGE,
 } from './seed-data';
 
+/** Upsert a single-type (finds it then updates, or creates if missing). */
+async function upsertSingleType(strapi: any, uid: string, data: object) {
+  const existing = await strapi.documents(uid).findFirst();
+  if (existing) {
+    await strapi.documents(uid).update({ documentId: existing.documentId, data, status: 'published' });
+  } else {
+    await strapi.documents(uid).create({ data, status: 'published' });
+  }
+}
+
 export default {
   register(/* { strapi } */) {},
 
   async bootstrap({ strapi }: { strapi: any }) {
-    // Skip seeding if data already exists (avoids slow remote DB round-trips on every restart)
+
+    // ─── SINGLE TYPES — always upsert so new fields get populated on every restart ───
+    console.log('Upserting single-type page content...');
+
+    await upsertSingleType(strapi, 'api::home-page.home-page',       SEED_HOME_PAGE);
+    await upsertSingleType(strapi, 'api::faq-page.faq-page',         SEED_FAQ_PAGE);
+    await upsertSingleType(strapi, 'api::recipe-page.recipe-page',   SEED_RECIPE_PAGE);
+    await upsertSingleType(strapi, 'api::product-page.product-page', SEED_PRODUCT_PAGE);
+    await upsertSingleType(strapi, 'api::media-page.media-page',     SEED_MEDIA_PAGE);
+    await upsertSingleType(strapi, 'api::about-page.about-page',     SEED_ABOUT_PAGE);
+    await upsertSingleType(strapi, 'api::career-page.career-page',   SEED_CAREER_PAGE);
+    await upsertSingleType(strapi, 'api::farm-page.farm-page',       SEED_FARM_PAGE);
+    await upsertSingleType(strapi, 'api::brand-page.brand-page',     SEED_BRAND_PAGE);
+    await upsertSingleType(strapi, 'api::contact-page.contact-page', SEED_CONTACT_PAGE);
+    await upsertSingleType(strapi, 'api::terms-page.terms-page',     SEED_TERMS_PAGE);
+    await upsertSingleType(strapi, 'api::privacy-page.privacy-page', SEED_PRIVACY_PAGE);
+    await upsertSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING);
+    await upsertSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING);
+
+    console.log('Single-type pages upserted.');
+
+    // ─── COLLECTION TYPES — only seed once (skip if already populated) ───────────────
     const productCount = await strapi.documents('api::product.product').count();
     if (productCount > 0) {
-      console.log('Database already seeded, skipping...');
+      console.log('Collection types already seeded, skipping collection seeding.');
       return;
     }
-    console.log('Seeding database...');
+    console.log('Seeding collection types...');
 
     // Products - Update or Create
     for (const product of SEED_PRODUCTS) {
@@ -43,17 +74,15 @@ export default {
       });
 
       if (existing.length > 0) {
-        // Update existing with new fields
         await strapi.documents('api::product.product').update({
           documentId: existing[0].documentId,
           data: product,
           status: 'published'
         });
       } else {
-        // Create new
-        await strapi.documents('api::product.product').create({ 
-          data: product, 
-          status: 'published' 
+        await strapi.documents('api::product.product').create({
+          data: product,
+          status: 'published'
         });
       }
     }
@@ -95,9 +124,9 @@ export default {
           status: 'published'
         });
       } else {
-        await strapi.documents('api::faq.faq').create({ 
-          data: faq, 
-          status: 'published' 
+        await strapi.documents('api::faq.faq').create({
+          data: faq,
+          status: 'published'
         });
       }
     }
@@ -112,7 +141,6 @@ export default {
 
     // Recipes
     for (const recipe of SEED_RECIPES) {
-      // Find related product by slug if we want to link it (demo purposes)
       let relatedProductId = null;
       if (recipe.slug === "cairo-beef-strips") {
         const p = await strapi.documents('api::product.product').findMany({ filters: { slug: 'frozen-beef-shank' } });
@@ -136,9 +164,9 @@ export default {
           status: 'published'
         });
       } else {
-        await strapi.documents('api::recipe.recipe').create({ 
-          data: recipeData, 
-          status: 'published' 
+        await strapi.documents('api::recipe.recipe').create({
+          data: recipeData,
+          status: 'published'
         });
       }
     }
@@ -158,7 +186,7 @@ export default {
       const cats = await strapi.documents('api::media-category.media-category').findMany({
         filters: { name: post.category }
       });
-      
+
       const postData: any = { ...post };
       if (cats.length > 0) {
         postData.category = cats[0].documentId;
@@ -175,221 +203,11 @@ export default {
           status: 'published'
         });
       } else {
-        await strapi.documents('api::media-post.media-post').create({ 
-          data: postData, 
-          status: 'published' 
+        await strapi.documents('api::media-post.media-post').create({
+          data: postData,
+          status: 'published'
         });
       }
-    }
-
-    // Home Page (Single Type)
-    const homePage = await strapi.documents('api::home-page.home-page').findFirst();
-    if (homePage) {
-        await strapi.documents('api::home-page.home-page').update({
-            documentId: homePage.documentId,
-            data: SEED_HOME_PAGE,
-            status: 'published'
-        });
-    } else {
-      await strapi.documents('api::home-page.home-page').create({
-        data: SEED_HOME_PAGE,
-        status: 'published'
-      });
-    }
-
-    // FAQ Page (Single Type)
-    const faqPage = await strapi.documents('api::faq-page.faq-page').findFirst();
-    if (faqPage) {
-      await strapi.documents('api::faq-page.faq-page').update({
-        documentId: faqPage.documentId,
-        data: SEED_FAQ_PAGE,
-        status: 'published'
-      });
-    } else {
-      await strapi.documents('api::faq-page.faq-page').create({
-        data: SEED_FAQ_PAGE,
-        status: 'published'
-      });
-    }
-
-    // Recipe Page (Single Type)
-    const recipePage = await strapi.documents('api::recipe-page.recipe-page').findFirst();
-    if (recipePage) {
-      await strapi.documents('api::recipe-page.recipe-page').update({
-        documentId: recipePage.documentId,
-        data: SEED_RECIPE_PAGE,
-        status: 'published'
-      });
-    } else {
-      await strapi.documents('api::recipe-page.recipe-page').create({
-        data: SEED_RECIPE_PAGE,
-        status: 'published'
-      });
-    }
-
-    // Product Page (Single Type)
-    const productPage = await strapi.documents('api::product-page.product-page').findFirst();
-    if (productPage) {
-      await strapi.documents('api::product-page.product-page').update({
-        documentId: productPage.documentId,
-        data: SEED_PRODUCT_PAGE,
-        status: 'published'
-      });
-    } else {
-      await strapi.documents('api::product-page.product-page').create({
-        data: SEED_PRODUCT_PAGE,
-        status: 'published'
-      });
-    }
-
-    // Media Page (Single Type)
-    const mediaPage = await strapi.documents('api::media-page.media-page').findFirst();
-    if (mediaPage) {
-      await strapi.documents('api::media-page.media-page').update({
-        documentId: mediaPage.documentId,
-        data: SEED_MEDIA_PAGE,
-        status: 'published'
-      });
-    } else {
-      await strapi.documents('api::media-page.media-page').create({
-        data: SEED_MEDIA_PAGE,
-        status: 'published'
-      });
-    }
-
-    // About Page (Single Type)
-    const aboutPage = await strapi.documents('api::about-page.about-page').findFirst();
-    if (aboutPage) {
-      await strapi.documents('api::about-page.about-page').update({
-        documentId: aboutPage.documentId,
-        data: SEED_ABOUT_PAGE,
-        status: 'published'
-      });
-    } else {
-      await strapi.documents('api::about-page.about-page').create({
-        data: SEED_ABOUT_PAGE,
-        status: 'published'
-      });
-    }
-
-    // Career Page (Single Type)
-    const careerPage = await strapi.documents('api::career-page.career-page').findFirst();
-    if (careerPage) {
-      await strapi.documents('api::career-page.career-page').update({
-        documentId: careerPage.documentId,
-        data: SEED_CAREER_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::career-page.career-page').create({
-        data: SEED_CAREER_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Farm Page (Single Type)
-    const farmPage = await strapi.documents('api::farm-page.farm-page').findFirst();
-    if (farmPage) {
-      await strapi.documents('api::farm-page.farm-page').update({
-        documentId: farmPage.documentId,
-        data: SEED_FARM_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::farm-page.farm-page').create({
-        data: SEED_FARM_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Brand Page (Single Type)
-    const brandPage = await strapi.documents('api::brand-page.brand-page').findFirst();
-    if (brandPage) {
-      await strapi.documents('api::brand-page.brand-page').update({
-        documentId: brandPage.documentId,
-        data: SEED_BRAND_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::brand-page.brand-page').create({
-        data: SEED_BRAND_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Contact Page (Single Type)
-    const contactPage = await strapi.documents('api::contact-page.contact-page').findFirst();
-    if (contactPage) {
-      await strapi.documents('api::contact-page.contact-page').update({
-        documentId: contactPage.documentId,
-        data: SEED_CONTACT_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::contact-page.contact-page').create({
-        data: SEED_CONTACT_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Terms Page (Single Type)
-    const termsPage = await strapi.documents('api::terms-page.terms-page').findFirst();
-    if (termsPage) {
-      await strapi.documents('api::terms-page.terms-page').update({
-        documentId: termsPage.documentId,
-        data: SEED_TERMS_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::terms-page.terms-page').create({
-        data: SEED_TERMS_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Privacy Page (Single Type)
-    const privacyPage = await strapi.documents('api::privacy-page.privacy-page').findFirst();
-    if (privacyPage) {
-      await strapi.documents('api::privacy-page.privacy-page').update({
-        documentId: privacyPage.documentId,
-        data: SEED_PRIVACY_PAGE,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::privacy-page.privacy-page').create({
-        data: SEED_PRIVACY_PAGE,
-        status: 'published',
-      });
-    }
-
-    // Navbar Setting (Single Type)
-    const navbarSetting = await strapi.documents('api::navbar-setting.navbar-setting').findFirst();
-    if (navbarSetting) {
-      await strapi.documents('api::navbar-setting.navbar-setting').update({
-        documentId: navbarSetting.documentId,
-        data: SEED_NAVBAR_SETTING,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::navbar-setting.navbar-setting').create({
-        data: SEED_NAVBAR_SETTING,
-        status: 'published',
-      });
-    }
-
-    // Footer Setting (Single Type)
-    const footerSetting = await strapi.documents('api::footer-setting.footer-setting').findFirst();
-    if (footerSetting) {
-      await strapi.documents('api::footer-setting.footer-setting').update({
-        documentId: footerSetting.documentId,
-        data: SEED_FOOTER_SETTING,
-        status: 'published',
-      });
-    } else {
-      await strapi.documents('api::footer-setting.footer-setting').create({
-        data: SEED_FOOTER_SETTING,
-        status: 'published',
-      });
     }
 
     console.log('Database seeded successfully!');
