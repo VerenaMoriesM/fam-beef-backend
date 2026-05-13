@@ -28,6 +28,12 @@ export default {
   register(/* { strapi } */) {},
 
   async bootstrap({ strapi }: { strapi: any }) {
+    // Skip seeding if data already exists (avoids slow remote DB round-trips on every restart)
+    const productCount = await strapi.documents('api::product.product').count();
+    if (productCount > 0) {
+      console.log('Database already seeded, skipping...');
+      return;
+    }
     console.log('Seeding database...');
 
     // Products - Update or Create
