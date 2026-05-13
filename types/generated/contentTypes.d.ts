@@ -543,6 +543,49 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerApplicationCareerApplication
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'career_applications';
+  info: {
+    description: 'Job applications submitted via the careers page';
+    displayName: 'Career Application';
+    pluralName: 'career-applications';
+    singularName: 'career-application';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    department: Schema.Attribute.Enumeration<
+      ['digital_marketing', 'production', 'sales']
+    >;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    faculty: Schema.Attribute.String;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    graduationYear: Schema.Attribute.String;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-application.career-application'
+    > &
+      Schema.Attribute.Private;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    status: Schema.Attribute.Enumeration<
+      ['pending', 'reviewed', 'accepted', 'rejected']
+    > &
+      Schema.Attribute.DefaultTo<'pending'>;
+    university: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCareerPageCareerPage extends Struct.SingleTypeSchema {
   collectionName: 'career_pages';
   info: {
@@ -1566,6 +1609,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::brand-page.brand-page': ApiBrandPageBrandPage;
       'api::brand.brand': ApiBrandBrand;
+      'api::career-application.career-application': ApiCareerApplicationCareerApplication;
       'api::career-page.career-page': ApiCareerPageCareerPage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
