@@ -83,6 +83,50 @@ export interface SectionsBrandHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsCareersApply extends Struct.ComponentSchema {
+  collectionName: 'components_sections_careers_applies';
+  info: {
+    description: 'Apply Now form section on the Careers page';
+    displayName: 'Careers Apply Section';
+    icon: 'cursor';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsCareersHero extends Struct.ComponentSchema {
+  collectionName: 'components_sections_careers_heroes';
+  info: {
+    description: 'Hero section for the Careers page';
+    displayName: 'Careers Hero';
+    icon: 'layout';
+  };
+  attributes: {
+    breadcrumb: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsCareersHowWeWork extends Struct.ComponentSchema {
+  collectionName: 'components_sections_careers_how_we_works';
+  info: {
+    description: 'How We Work Together section \u2014 section title + card texts + gallery photos';
+    displayName: 'Careers How We Work';
+    icon: 'grid';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    cards: Schema.Attribute.JSON;
+    images: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsCta extends Struct.ComponentSchema {
   collectionName: 'components_sections_ctas';
   info: {
@@ -405,6 +449,9 @@ declare module '@strapi/strapi' {
       'sections.brand-feature-item': SectionsBrandFeatureItem;
       'sections.brand-flagship': SectionsBrandFlagship;
       'sections.brand-hero': SectionsBrandHero;
+      'sections.careers-apply': SectionsCareersApply;
+      'sections.careers-hero': SectionsCareersHero;
+      'sections.careers-how-we-work': SectionsCareersHowWeWork;
       'sections.cta': SectionsCta;
       'sections.cta-section': SectionsCtaSection;
       'sections.farm-environment': SectionsFarmEnvironment;

@@ -16,6 +16,7 @@ import {
   SEED_ABOUT_PAGE,
   SEED_BRAND_PAGE,
   SEED_FARM_PAGE,
+  SEED_CAREER_PAGE,
 } from './seed-data';
 
 export default {
@@ -257,6 +258,21 @@ export default {
       await strapi.documents('api::about-page.about-page').create({
         data: SEED_ABOUT_PAGE,
         status: 'published'
+      });
+    }
+
+    // Career Page (Single Type)
+    const careerPage = await strapi.documents('api::career-page.career-page').findFirst();
+    if (careerPage) {
+      await strapi.documents('api::career-page.career-page').update({
+        documentId: careerPage.documentId,
+        data: SEED_CAREER_PAGE,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::career-page.career-page').create({
+        data: SEED_CAREER_PAGE,
+        status: 'published',
       });
     }
 

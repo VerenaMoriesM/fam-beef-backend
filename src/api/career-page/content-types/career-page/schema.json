@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "career_pages",
+  "info": {
+    "singularName": "career-page",
+    "pluralName": "career-pages",
+    "displayName": "Career Page",
+    "description": "Content for the Careers page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.careers-hero"
+    },
+    "feature": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.brand-feature-item"
+    },
+    "howWeWork": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.careers-how-we-work"
+    },
+    "apply": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.careers-apply"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

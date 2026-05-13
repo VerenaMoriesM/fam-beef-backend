@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_careers_how_we_works",
+  "info": {
+    "displayName": "Careers How We Work",
+    "icon": "grid",
+    "description": "How We Work Together section — section title + card texts + gallery photos"
+  },
+  "options": {},
+  "attributes": {
+    "badge": { "type": "string" },
+    "title": { "type": "string" },
+    "cards": {
+      "type": "json",
+      "required": false
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    }
+  }
+}

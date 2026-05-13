@@ -528,6 +528,52 @@ export const SEED_ABOUT_PAGE = {
   }
 };
 
+export const SEED_CAREER_PAGE = {
+  hero: {
+    breadcrumb: "Careers",
+    title: "Join Our Family",
+    description:
+      "We're looking for people who care about quality, integrity, and doing the work right.",
+  },
+  feature: {
+    badge: "Why Work With Fam Beef",
+    title: "Purpose-Driven Work",
+    description:
+      "Be part of a team that takes pride in where food comes from. At FAM Beef, every role contributes to a fully integrated process — from raising livestock to delivering quality products. We value ownership, care, and doing things the right way.",
+    imagePosition: "right",
+    buttonLabel: "Apply Now",
+    buttonHref: "#apply",
+    backgroundColor: "bg-[#F3F3F5]",
+  },
+  howWeWork: {
+    badge: "Life At Fam Beef",
+    title: "How We Work Together",
+    cards: [
+      {
+        badge: "Collaboration",
+        title: "We Work As One Unified Team",
+      },
+      {
+        badge: "Learning",
+        title: "We Teach What We Know",
+      },
+      {
+        badge: "Community",
+        title: "You're Part Of Something Larger",
+      },
+    ],
+  },
+  apply: {
+    badge: "Join Fam Beef",
+    title: "Apply Now",
+  },
+  seo: {
+    metaTitle: "Careers | FAM Beef",
+    metaDescription:
+      "Join the FAM Beef family. We're looking for people who care about quality, integrity, and doing the work right. Explore open roles today.",
+  },
+};
+
 export const SEED_FARM_PAGE = {
   hero: {
     title: "Where Quality Is Raised From The Start",

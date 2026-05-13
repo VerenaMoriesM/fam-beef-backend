@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_careers_heroes",
+  "info": {
+    "displayName": "Careers Hero",
+    "icon": "layout",
+    "description": "Hero section for the Careers page"
+  },
+  "options": {},
+  "attributes": {
+    "breadcrumb": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "text" },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

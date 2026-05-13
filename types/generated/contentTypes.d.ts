@@ -543,6 +543,42 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCareerPageCareerPage extends Struct.SingleTypeSchema {
+  collectionName: 'career_pages';
+  info: {
+    description: 'Content for the Careers page';
+    displayName: 'Career Page';
+    pluralName: 'career-pages';
+    singularName: 'career-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apply: Schema.Attribute.Component<'sections.careers-apply', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    feature: Schema.Attribute.Component<'sections.brand-feature-item', false>;
+    hero: Schema.Attribute.Component<'sections.careers-hero', false>;
+    howWeWork: Schema.Attribute.Component<
+      'sections.careers-how-we-work',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::career-page.career-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
   collectionName: 'faq_pages';
   info: {
@@ -1530,6 +1566,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::brand-page.brand-page': ApiBrandPageBrandPage;
       'api::brand.brand': ApiBrandBrand;
+      'api::career-page.career-page': ApiCareerPageCareerPage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
       'api::farm-page.farm-page': ApiFarmPageFarmPage;
