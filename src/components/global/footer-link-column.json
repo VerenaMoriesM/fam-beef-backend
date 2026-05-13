@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_footer_link_columns",
+  "info": {
+    "displayName": "Footer Link Column",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "title": { "type": "string", "required": true },
+    "links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.nav-link"
+    }
+  }
+}

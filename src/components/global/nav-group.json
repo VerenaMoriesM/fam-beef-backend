@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_global_nav_groups",
+  "info": {
+    "displayName": "Nav Group",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "label": { "type": "string", "required": true },
+    "href": { "type": "string", "required": true },
+    "children": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.nav-link"
+    }
+  }
+}

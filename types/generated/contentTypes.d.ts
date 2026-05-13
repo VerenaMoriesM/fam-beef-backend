@@ -788,6 +788,44 @@ export interface ApiFarmPageFarmPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFooterSettingFooterSetting extends Struct.SingleTypeSchema {
+  collectionName: 'footer_settings';
+  info: {
+    description: 'Global footer configuration';
+    displayName: 'Footer Setting';
+    pluralName: 'footer-settings';
+    singularName: 'footer-setting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Schema.Attribute.String;
+    contactEmail: Schema.Attribute.String;
+    contactPhone: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    linkColumns: Schema.Attribute.Component<'global.footer-link-column', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer-setting.footer-setting'
+    > &
+      Schema.Attribute.Private;
+    newsletterDescription: Schema.Attribute.String;
+    newsletterTitle: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    socialLinks: Schema.Attribute.Component<
+      'global.footer-social-links',
+      false
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -919,6 +957,37 @@ export interface ApiMediaPostMediaPost extends Struct.CollectionTypeSchema {
     seo: Schema.Attribute.Component<'shared.seo', false>;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiNavbarSettingNavbarSetting extends Struct.SingleTypeSchema {
+  collectionName: 'navbar_settings';
+  info: {
+    description: 'Global navbar configuration';
+    displayName: 'Navbar Setting';
+    pluralName: 'navbar-settings';
+    singularName: 'navbar-setting';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaHref: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navbar-setting.navbar-setting'
+    > &
+      Schema.Attribute.Private;
+    navItems: Schema.Attribute.Component<'global.nav-group', true>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1685,10 +1754,12 @@ declare module '@strapi/strapi' {
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
       'api::farm-page.farm-page': ApiFarmPageFarmPage;
+      'api::footer-setting.footer-setting': ApiFooterSettingFooterSetting;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::media-category.media-category': ApiMediaCategoryMediaCategory;
       'api::media-page.media-page': ApiMediaPageMediaPage;
       'api::media-post.media-post': ApiMediaPostMediaPost;
+      'api::navbar-setting.navbar-setting': ApiNavbarSettingNavbarSetting;
       'api::partner.partner': ApiPartnerPartner;
       'api::process-step.process-step': ApiProcessStepProcessStep;
       'api::product-page.product-page': ApiProductPageProductPage;

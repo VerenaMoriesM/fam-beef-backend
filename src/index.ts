@@ -18,6 +18,8 @@ import {
   SEED_FARM_PAGE,
   SEED_CAREER_PAGE,
   SEED_CONTACT_PAGE,
+  SEED_NAVBAR_SETTING,
+  SEED_FOOTER_SETTING,
 } from './seed-data';
 
 export default {
@@ -318,6 +320,36 @@ export default {
     } else {
       await strapi.documents('api::contact-page.contact-page').create({
         data: SEED_CONTACT_PAGE,
+        status: 'published',
+      });
+    }
+
+    // Navbar Setting (Single Type)
+    const navbarSetting = await strapi.documents('api::navbar-setting.navbar-setting').findFirst();
+    if (navbarSetting) {
+      await strapi.documents('api::navbar-setting.navbar-setting').update({
+        documentId: navbarSetting.documentId,
+        data: SEED_NAVBAR_SETTING,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::navbar-setting.navbar-setting').create({
+        data: SEED_NAVBAR_SETTING,
+        status: 'published',
+      });
+    }
+
+    // Footer Setting (Single Type)
+    const footerSetting = await strapi.documents('api::footer-setting.footer-setting').findFirst();
+    if (footerSetting) {
+      await strapi.documents('api::footer-setting.footer-setting').update({
+        documentId: footerSetting.documentId,
+        data: SEED_FOOTER_SETTING,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::footer-setting.footer-setting').create({
+        data: SEED_FOOTER_SETTING,
         status: 'published',
       });
     }

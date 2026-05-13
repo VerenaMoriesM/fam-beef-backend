@@ -674,6 +674,71 @@ export const SEED_BRAND_PAGE = {
   },
 };
 
+export const SEED_NAVBAR_SETTING = {
+  ctaLabel: "Let's Talk",
+  ctaHref: "/contact",
+  navItems: [
+    { label: "About us", href: "/about" },
+    { label: "FAM Farms", href: "/farms" },
+    { label: "Our Brands", href: "/brands" },
+    { label: "Products", href: "/products" },
+    { label: "Our Process", href: "/process" },
+    {
+      label: "FAM at Home",
+      href: "/at-home",
+      children: [
+        { label: "Recipes", href: "/at-home/recipes" },
+        { label: "FAQs", href: "/at-home/faq" },
+        { label: "Media Center", href: "/at-home/media" },
+      ],
+    },
+    { label: "Careers", href: "/careers" },
+  ],
+};
+
+export const SEED_FOOTER_SETTING = {
+  newsletterTitle: "Join Our Newsletter",
+  newsletterDescription: "Stay informed with the latest news and insights",
+  contactEmail: "info@fambeef.com",
+  contactPhone: "+201001234567",
+  socialLinks: {
+    facebook: "https://facebook.com/fambeef",
+    instagram: "https://instagram.com/fambeef",
+    twitter: "https://x.com/fambeef",
+    linkedin: "https://linkedin.com/company/fambeef",
+    youtube: "https://youtube.com/@fambeef",
+  },
+  linkColumns: [
+    {
+      title: "Company",
+      links: [
+        { label: "Home", href: "/" },
+        { label: "About us", href: "/about" },
+        { label: "FAM Farms", href: "/farms" },
+        { label: "Our process", href: "/process" },
+        { label: "Careers", href: "/careers" },
+      ],
+    },
+    {
+      title: "Explore",
+      links: [
+        { label: "Our Brands", href: "/brands" },
+        { label: "Products", href: "/products" },
+        { label: "Recipes", href: "/recipes" },
+        { label: "Media center", href: "/media" },
+      ],
+    },
+    {
+      title: "Support",
+      links: [
+        { label: "Contact Us", href: "/contact" },
+        { label: "FAQs", href: "/faqs" },
+      ],
+    },
+  ],
+  companyName: "Fam Beef",
+};
+
 export const SEED_CONTACT_PAGE = {
   hero: {
     badge: "Contact Us",

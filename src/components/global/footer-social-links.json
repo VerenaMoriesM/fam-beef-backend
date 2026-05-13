@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_footer_social_links",
+  "info": {
+    "displayName": "Footer Social Links",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "facebook": { "type": "string" },
+    "instagram": { "type": "string" },
+    "twitter": { "type": "string" },
+    "linkedin": { "type": "string" },
+    "youtube": { "type": "string" }
+  }
+}

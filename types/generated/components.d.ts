@@ -1,5 +1,57 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface GlobalFooterLinkColumn extends Struct.ComponentSchema {
+  collectionName: 'components_global_footer_link_columns';
+  info: {
+    displayName: 'Footer Link Column';
+    icon: 'layout';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'global.nav-link', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface GlobalFooterSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_global_footer_social_links';
+  info: {
+    displayName: 'Footer Social Links';
+    icon: 'link';
+  };
+  attributes: {
+    facebook: Schema.Attribute.String;
+    instagram: Schema.Attribute.String;
+    linkedin: Schema.Attribute.String;
+    twitter: Schema.Attribute.String;
+    youtube: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalNavGroup extends Struct.ComponentSchema {
+  collectionName: 'components_global_nav_groups';
+  info: {
+    displayName: 'Nav Group';
+    icon: 'layer';
+  };
+  attributes: {
+    children: Schema.Attribute.Component<'global.nav-link', true>;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface GlobalNavLink extends Struct.ComponentSchema {
+  collectionName: 'components_global_nav_links';
+  info: {
+    displayName: 'Nav Link';
+    icon: 'link';
+  };
+  attributes: {
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SectionsAboutHero extends Struct.ComponentSchema {
   collectionName: 'components_sections_about_heroes';
   info: {
@@ -483,6 +535,10 @@ export interface SharedSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'global.footer-link-column': GlobalFooterLinkColumn;
+      'global.footer-social-links': GlobalFooterSocialLinks;
+      'global.nav-group': GlobalNavGroup;
+      'global.nav-link': GlobalNavLink;
       'sections.about-hero': SectionsAboutHero;
       'sections.accordion-item': SectionsAccordionItem;
       'sections.brand-feature-item': SectionsBrandFeatureItem;

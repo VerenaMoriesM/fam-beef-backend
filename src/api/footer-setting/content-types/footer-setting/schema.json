@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_settings",
+  "info": {
+    "singularName": "footer-setting",
+    "pluralName": "footer-settings",
+    "displayName": "Footer Setting",
+    "description": "Global footer configuration"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "newsletterTitle": {
+      "type": "string"
+    },
+    "newsletterDescription": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "string"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "socialLinks": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.footer-social-links"
+    },
+    "linkColumns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.footer-link-column"
+    },
+    "companyName": {
+      "type": "string"
+    }
+  }
+}
