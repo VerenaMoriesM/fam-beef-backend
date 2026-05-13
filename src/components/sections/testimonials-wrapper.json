@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_testimonials_wrappers",
+  "info": {
+    "displayName": "Testimonials Wrapper",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

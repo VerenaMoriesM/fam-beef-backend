@@ -841,6 +841,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     cta: Schema.Attribute.Component<'sections.cta', false>;
+    faq: Schema.Attribute.Component<'sections.faq-wrapper', false>;
+    farmSection: Schema.Attribute.Component<'sections.farm-wrapper', false>;
+    featuredProducts: Schema.Attribute.Component<
+      'sections.featured-products-wrapper',
+      false
+    >;
     hero: Schema.Attribute.Component<'sections.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -848,9 +854,17 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
+    media: Schema.Attribute.Component<'sections.media-wrapper', false>;
     overview: Schema.Attribute.Component<'sections.overview', false>;
+    partners: Schema.Attribute.Component<'sections.partners-wrapper', false>;
+    process: Schema.Attribute.Component<'sections.process-wrapper', false>;
     publishedAt: Schema.Attribute.DateTime;
+    recipes: Schema.Attribute.Component<'sections.recipes-wrapper', false>;
     seo: Schema.Attribute.Component<'shared.seo', false>;
+    testimonials: Schema.Attribute.Component<
+      'sections.testimonials-wrapper',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

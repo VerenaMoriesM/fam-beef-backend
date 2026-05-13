@@ -248,6 +248,20 @@ export interface SectionsCtaSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFaqWrapper extends Struct.ComponentSchema {
+  collectionName: 'components_sections_faq_wrappers';
+  info: {
+    displayName: 'FAQ Wrapper';
+    icon: 'question';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    ctaHref: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsFarmEnvironment extends Struct.ComponentSchema {
   collectionName: 'components_sections_farm_environments';
   info: {
@@ -320,10 +334,31 @@ export interface SectionsFarmWrapper extends Struct.ComponentSchema {
     icon: 'home';
   };
   attributes: {
+    ctaButtonHref: Schema.Attribute.String;
+    ctaButtonLabel: Schema.Attribute.String;
+    ctaText: Schema.Attribute.Text;
     hideCtaCard: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     hideKnowMore: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     isFarmsPage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    knowMoreHref: Schema.Attribute.String;
+    knowMoreLabel: Schema.Attribute.String;
     main_image: Schema.Attribute.Media<'images'>;
+  };
+}
+
+export interface SectionsFeaturedProductsWrapper
+  extends Struct.ComponentSchema {
+  collectionName: 'components_sections_featured_products_wrappers';
+  info: {
+    displayName: 'Featured Products Wrapper';
+    icon: 'shoppingCart';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    ctaHref: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -393,6 +428,18 @@ export interface SectionsLegalSection extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Text & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SectionsMediaWrapper extends Struct.ComponentSchema {
+  collectionName: 'components_sections_media_wrappers';
+  info: {
+    displayName: 'Media Wrapper';
+    icon: 'television';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -466,6 +513,20 @@ export interface SectionsProcessWrapper extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsRecipesWrapper extends Struct.ComponentSchema {
+  collectionName: 'components_sections_recipes_wrappers';
+  info: {
+    displayName: 'Recipes Wrapper';
+    icon: 'apps';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    ctaHref: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsStatItem extends Struct.ComponentSchema {
   collectionName: 'components_sections_stat_items';
   info: {
@@ -488,6 +549,18 @@ export interface SectionsStorySection extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     stats: Schema.Attribute.Component<'sections.stat-item', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsTestimonialsWrapper extends Struct.ComponentSchema {
+  collectionName: 'components_sections_testimonials_wrappers';
+  info: {
+    displayName: 'Testimonials Wrapper';
+    icon: 'quote';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -564,23 +637,28 @@ declare module '@strapi/strapi' {
       'sections.contact-map': SectionsContactMap;
       'sections.cta': SectionsCta;
       'sections.cta-section': SectionsCtaSection;
+      'sections.faq-wrapper': SectionsFaqWrapper;
       'sections.farm-environment': SectionsFarmEnvironment;
       'sections.farm-hero-block': SectionsFarmHeroBlock;
       'sections.farm-production-block': SectionsFarmProductionBlock;
       'sections.farm-strength': SectionsFarmStrength;
       'sections.farm-wrapper': SectionsFarmWrapper;
+      'sections.featured-products-wrapper': SectionsFeaturedProductsWrapper;
       'sections.hero': SectionsHero;
       'sections.history-item': SectionsHistoryItem;
       'sections.history-section': SectionsHistorySection;
       'sections.ingredients-section': SectionsIngredientsSection;
       'sections.legal-section': SectionsLegalSection;
+      'sections.media-wrapper': SectionsMediaWrapper;
       'sections.method-step': SectionsMethodStep;
       'sections.mission-vision': SectionsMissionVision;
       'sections.overview': SectionsOverview;
       'sections.partners-wrapper': SectionsPartnersWrapper;
       'sections.process-wrapper': SectionsProcessWrapper;
+      'sections.recipes-wrapper': SectionsRecipesWrapper;
       'sections.stat-item': SectionsStatItem;
       'sections.story-section': SectionsStorySection;
+      'sections.testimonials-wrapper': SectionsTestimonialsWrapper;
       'sections.value-item': SectionsValueItem;
       'sections.values-section': SectionsValuesSection;
       'shared.content-block': SharedContentBlock;

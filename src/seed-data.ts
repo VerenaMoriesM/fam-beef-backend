@@ -401,12 +401,58 @@ export const SEED_HOME_PAGE = {
     ctaLabel: "Know More",
     ctaHref: "/about",
   },
+  farmSection: {
+    hideCtaCard: false,
+    hideKnowMore: true,
+    isFarmsPage: false,
+    ctaText: "Our farms are where everything begins — from feed cultivation to livestock care. Built on responsibility and full-cycle control, they define the quality, consistency, and trust behind every product we deliver.",
+    ctaButtonLabel: "Explore FAM Farms",
+    ctaButtonHref: "/farms",
+    knowMoreLabel: "Know More",
+    knowMoreHref: "/farms",
+  },
+  featuredProducts: {
+    badge: "100% Baladi Meat",
+    title: "Our Featured Products",
+    description: "Handpicked cuts from our premium beef, ready for your kitchen.",
+    ctaLabel: "View All Products",
+    ctaHref: "/products",
+  },
+  process: {
+    badge: "Our Integrated Process",
+    title: "From Raising To Final Cut",
+    description: "We control every step of the journey.",
+  },
+  partners: {
+    badge: "Our Partners",
+    title: "Trusted By The Best",
+  },
+  recipes: {
+    badge: "Our Recipes",
+    title: "Inspired By Our Meat",
+    ctaLabel: "Explore All Recipes",
+    ctaHref: "/at-home/recipes",
+  },
+  media: {
+    badge: "Latest Media",
+    title: "News & Updates",
+  },
+  testimonials: {
+    badge: "Real Voices. Real Partnerships.",
+    title: "From Our Partners",
+  },
+  faq: {
+    badge: "Have a Question?",
+    title: "Frequently Asked Questions",
+    ctaLabel: "Explore All FAQs",
+    ctaHref: "/at-home/faq",
+  },
   cta: {
     title: "Ready To Partner",
     description: "Let's talk about bringing premium, full-cycle beef to your business.",
     ctaLabel: "Let's Talk",
     ctaHref: "/contact",
-  }
+  },
 };
 
 export const SEED_FAQ_PAGE = {

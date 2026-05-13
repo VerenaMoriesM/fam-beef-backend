@@ -24,6 +24,21 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "ctaText": {
+      "type": "text"
+    },
+    "ctaButtonLabel": {
+      "type": "string"
+    },
+    "ctaButtonHref": {
+      "type": "string"
+    },
+    "knowMoreLabel": {
+      "type": "string"
+    },
+    "knowMoreHref": {
+      "type": "string"
     }
   }
 }

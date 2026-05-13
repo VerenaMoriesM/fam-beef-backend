@@ -21,6 +21,46 @@
       "repeatable": false,
       "component": "sections.overview"
     },
+    "farmSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.farm-wrapper"
+    },
+    "featuredProducts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.featured-products-wrapper"
+    },
+    "process": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.process-wrapper"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.partners-wrapper"
+    },
+    "recipes": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.recipes-wrapper"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.media-wrapper"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.testimonials-wrapper"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.faq-wrapper"
+    },
     "cta": {
       "type": "component",
       "repeatable": false,
