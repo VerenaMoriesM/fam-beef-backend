@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_brand_flagships",
+  "info": {
+    "displayName": "Brand Flagship",
+    "icon": "star",
+    "description": "Flagship brand showcase section (FarmProductionSection)"
+  },
+  "options": {},
+  "attributes": {
+    "badgeLogo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "buttonHref": {
+      "type": "string"
+    },
+    "backgroundColor": {
+      "type": "string"
+    }
+  }
+}

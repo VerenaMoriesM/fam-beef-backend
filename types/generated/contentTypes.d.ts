@@ -482,6 +482,39 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBrandPageBrandPage extends Struct.SingleTypeSchema {
+  collectionName: 'brand_pages';
+  info: {
+    description: 'Content for the Our Brands page';
+    displayName: 'Brand Page';
+    pluralName: 'brand-pages';
+    singularName: 'brand-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'sections.cta-section', false>;
+    features: Schema.Attribute.Component<'sections.brand-feature-item', true>;
+    flagship: Schema.Attribute.Component<'sections.brand-flagship', false>;
+    hero: Schema.Attribute.Component<'sections.brand-hero', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::brand-page.brand-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
   collectionName: 'brands';
   info: {
@@ -1457,6 +1490,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::brand-page.brand-page': ApiBrandPageBrandPage;
       'api::brand.brand': ApiBrandBrand;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;

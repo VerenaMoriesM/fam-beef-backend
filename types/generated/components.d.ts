@@ -30,6 +30,59 @@ export interface SectionsAccordionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsBrandFeatureItem extends Struct.ComponentSchema {
+  collectionName: 'components_sections_brand_feature_items';
+  info: {
+    description: 'A single feature/product section on the Brands page';
+    displayName: 'Brand Feature Item';
+    icon: 'grid';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    badge: Schema.Attribute.String;
+    buttonHref: Schema.Attribute.String;
+    buttonLabel: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    imagePosition: Schema.Attribute.Enumeration<['left', 'right']> &
+      Schema.Attribute.DefaultTo<'left'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsBrandFlagship extends Struct.ComponentSchema {
+  collectionName: 'components_sections_brand_flagships';
+  info: {
+    description: 'Flagship brand showcase section (FarmProductionSection)';
+    displayName: 'Brand Flagship';
+    icon: 'star';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    badgeLogo: Schema.Attribute.Media<'images'>;
+    buttonHref: Schema.Attribute.String;
+    buttonLabel: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsBrandHero extends Struct.ComponentSchema {
+  collectionName: 'components_sections_brand_heroes';
+  info: {
+    description: 'Hero section for the Brands page';
+    displayName: 'Brand Hero';
+    icon: 'layout';
+  };
+  attributes: {
+    breadcrumb: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsCta extends Struct.ComponentSchema {
   collectionName: 'components_sections_ctas';
   info: {
@@ -284,6 +337,9 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'sections.about-hero': SectionsAboutHero;
       'sections.accordion-item': SectionsAccordionItem;
+      'sections.brand-feature-item': SectionsBrandFeatureItem;
+      'sections.brand-flagship': SectionsBrandFlagship;
+      'sections.brand-hero': SectionsBrandHero;
       'sections.cta': SectionsCta;
       'sections.cta-section': SectionsCtaSection;
       'sections.farm-wrapper': SectionsFarmWrapper;

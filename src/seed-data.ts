@@ -527,3 +527,49 @@ export const SEED_ABOUT_PAGE = {
     metaDescription: "Learn more about FAM Beef's history, mission, and our commitment to providing the highest quality Baladi beef."
   }
 };
+
+export const SEED_BRAND_PAGE = {
+  hero: {
+    breadcrumb: "Our Brands",
+    title: "Our Brands",
+    description: "From pasture to table, each brand carries the same commitment to quality and integrity.",
+  },
+  flagship: {
+    title: "Fam Beef",
+    description:
+      "Our flagship line offers fresh, high-quality Baladi beef sourced exclusively from our own livestock. From steak and minced meat to kofta and specialty cuts, every product is processed in-house under strict quality standards to ensure consistency, traceability, and trusted performance.",
+    buttonLabel: "Explore Products",
+    buttonHref: "/products",
+    backgroundColor: "bg-[#F3F3F5]",
+  },
+  features: [
+    {
+      badge: "Coming Soon",
+      title: "Marinated Beef",
+      description:
+        "A selection of carefully chosen Baladi beef cuts, marinated with premium ingredients for rich flavor and effortless preparation. Professionally packaged and ready to cook, this range delivers convenience without compromising quality.",
+      imagePosition: "left",
+      backgroundColor: "bg-white",
+    },
+    {
+      badge: "Coming Soon",
+      title: "Deli Cold Cuts",
+      description:
+        "A premium range of cold cuts crafted from our own beef, carefully processed under controlled conditions to ensure consistent taste, texture, and quality. Each product is developed with attention to slicing precision, balanced seasoning, and professional packaging standards.",
+      imagePosition: "right",
+      backgroundColor: "bg-[#F3F3F5]",
+    },
+  ],
+  cta: {
+    badge: "Get In Touch",
+    title: "Ready To Partner",
+    description: "Let's talk about bringing premium, full-cycle beef to your business.",
+    cta_label: "Let's Talk",
+    cta_href: "/contact",
+  },
+  seo: {
+    metaTitle: "Our Brands | FAM Beef",
+    metaDescription:
+      "Explore FAM Beef brand lines — from fresh Baladi beef to marinated cuts and deli cold cuts. Each brand built on full-cycle quality and trust.",
+  },
+};

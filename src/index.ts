@@ -1,7 +1,7 @@
-import { 
-  SEED_PRODUCTS, 
-  SEED_BRANDS, 
-  SEED_PROCESS_STEPS, 
+import {
+  SEED_PRODUCTS,
+  SEED_BRANDS,
+  SEED_PROCESS_STEPS,
   SEED_HOME_PAGE,
   SEED_TESTIMONIALS,
   SEED_FAQS,
@@ -13,7 +13,8 @@ import {
   SEED_FAQ_PAGE,
   SEED_RECIPE_PAGE,
   SEED_PRODUCT_PAGE,
-  SEED_ABOUT_PAGE
+  SEED_ABOUT_PAGE,
+  SEED_BRAND_PAGE,
 } from './seed-data';
 
 export default {
@@ -255,6 +256,21 @@ export default {
       await strapi.documents('api::about-page.about-page').create({
         data: SEED_ABOUT_PAGE,
         status: 'published'
+      });
+    }
+
+    // Brand Page (Single Type)
+    const brandPage = await strapi.documents('api::brand-page.brand-page').findFirst();
+    if (brandPage) {
+      await strapi.documents('api::brand-page.brand-page').update({
+        documentId: brandPage.documentId,
+        data: SEED_BRAND_PAGE,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::brand-page.brand-page').create({
+        data: SEED_BRAND_PAGE,
+        status: 'published',
       });
     }
 

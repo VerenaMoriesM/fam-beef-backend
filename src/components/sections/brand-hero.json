@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_brand_heroes",
+  "info": {
+    "displayName": "Brand Hero",
+    "icon": "layout",
+    "description": "Hero section for the Brands page"
+  },
+  "options": {},
+  "attributes": {
+    "breadcrumb": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
