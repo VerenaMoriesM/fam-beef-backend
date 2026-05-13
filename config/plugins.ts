@@ -7,6 +7,13 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   'content-type-builder': {
     enabled: true,
   },
+  i18n: {
+    enabled: true,
+    config: {
+      defaultLocale: 'en',
+      locales: ['en', 'ar'],
+    },
+  },
   upload: {
     config: {
       provider: '@strapi/provider-upload-aws-s3',

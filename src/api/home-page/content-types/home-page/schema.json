@@ -9,67 +9,131 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero"
+      "component": "sections.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "overview": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.overview"
+      "component": "sections.overview",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "farmSection": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.farm-wrapper"
+      "component": "sections.farm-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "featuredProducts": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.featured-products-wrapper"
+      "component": "sections.featured-products-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "process": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.process-wrapper"
+      "component": "sections.process-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "partners": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.partners-wrapper"
+      "component": "sections.partners-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "recipes": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.recipes-wrapper"
+      "component": "sections.recipes-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "media": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.media-wrapper"
+      "component": "sections.media-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "testimonials": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.testimonials-wrapper"
+      "component": "sections.testimonials-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "faq": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.faq-wrapper"
+      "component": "sections.faq-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.cta"
+      "component": "sections.cta",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     }
   }
 }

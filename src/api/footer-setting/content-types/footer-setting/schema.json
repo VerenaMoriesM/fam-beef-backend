@@ -10,32 +10,71 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "newsletterTitle": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "newsletterDescription": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "contactEmail": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "contactPhone": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "socialLinks": {
       "type": "component",
       "repeatable": false,
-      "component": "global.footer-social-links"
+      "component": "global.footer-social-links",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "linkColumns": {
       "type": "component",
       "repeatable": true,
-      "component": "global.footer-link-column"
+      "component": "global.footer-link-column",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "companyName": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     }
   }
 }

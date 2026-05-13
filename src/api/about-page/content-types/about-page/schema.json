@@ -10,7 +10,11 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "sections": {
       "type": "dynamiczone",
@@ -24,12 +28,22 @@
         "sections.values-section",
         "sections.farm-wrapper",
         "sections.cta-section"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     }
   }
 }

@@ -10,18 +10,37 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "ctaLabel": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "ctaHref": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "navItems": {
       "type": "component",
       "repeatable": true,
-      "component": "global.nav-group"
+      "component": "global.nav-group",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     }
   }
 }

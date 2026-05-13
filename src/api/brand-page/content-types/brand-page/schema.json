@@ -10,32 +10,61 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.brand-hero"
+      "component": "sections.brand-hero",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "flagship": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.brand-flagship"
+      "component": "sections.brand-flagship",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "features": {
       "type": "component",
       "repeatable": true,
-      "component": "sections.brand-feature-item"
+      "component": "sections.brand-feature-item",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "cta": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.cta-section"
+      "component": "sections.cta-section",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     },
     "seo": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.seo"
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
     }
   }
 }
