@@ -113,6 +113,71 @@ export interface SectionsCtaSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsFarmEnvironment extends Struct.ComponentSchema {
+  collectionName: 'components_sections_farm_environments';
+  info: {
+    description: 'The Controlled Environment section on the Farms page';
+    displayName: 'Farm Environment';
+    icon: 'leaf';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    features: Schema.Attribute.JSON;
+    image: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFarmHeroBlock extends Struct.ComponentSchema {
+  collectionName: 'components_sections_farm_hero_blocks';
+  info: {
+    description: 'Text content for the Farm page hero section';
+    displayName: 'Farm Hero Block';
+    icon: 'layout';
+  };
+  attributes: {
+    ctaHref: Schema.Attribute.String;
+    ctaLabel: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFarmProductionBlock extends Struct.ComponentSchema {
+  collectionName: 'components_sections_farm_production_blocks';
+  info: {
+    description: 'A FarmProductionSection block with badge, title, description and gallery images';
+    displayName: 'Farm Production Block';
+    icon: 'star';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    badge: Schema.Attribute.String;
+    buttonHref: Schema.Attribute.String;
+    buttonLabel: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<'images', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsFarmStrength extends Struct.ComponentSchema {
+  collectionName: 'components_sections_farm_strengths';
+  info: {
+    description: 'The Beef Production strength section on the Farms page';
+    displayName: 'Farm Strength';
+    icon: 'bold';
+  };
+  attributes: {
+    bodyText: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images'>;
+    stampLabel: Schema.Attribute.String;
+    subtitle: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsFarmWrapper extends Struct.ComponentSchema {
   collectionName: 'components_sections_farm_wrappers';
   info: {
@@ -342,6 +407,10 @@ declare module '@strapi/strapi' {
       'sections.brand-hero': SectionsBrandHero;
       'sections.cta': SectionsCta;
       'sections.cta-section': SectionsCtaSection;
+      'sections.farm-environment': SectionsFarmEnvironment;
+      'sections.farm-hero-block': SectionsFarmHeroBlock;
+      'sections.farm-production-block': SectionsFarmProductionBlock;
+      'sections.farm-strength': SectionsFarmStrength;
       'sections.farm-wrapper': SectionsFarmWrapper;
       'sections.hero': SectionsHero;
       'sections.history-item': SectionsHistoryItem;

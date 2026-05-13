@@ -602,6 +602,44 @@ export interface ApiFaqFaq extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFarmPageFarmPage extends Struct.SingleTypeSchema {
+  collectionName: 'farm_pages';
+  info: {
+    description: 'Content for the FAM Farms page';
+    displayName: 'Farm Page';
+    pluralName: 'farm-pages';
+    singularName: 'farm-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    calf: Schema.Attribute.Component<'sections.farm-production-block', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'sections.cta-section', false>;
+    environment: Schema.Attribute.Component<'sections.farm-environment', false>;
+    hero: Schema.Attribute.Component<'sections.farm-hero-block', false>;
+    livestock: Schema.Attribute.Component<
+      'sections.farm-production-block',
+      false
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::farm-page.farm-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    strength: Schema.Attribute.Component<'sections.farm-strength', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1494,6 +1532,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
+      'api::farm-page.farm-page': ApiFarmPageFarmPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::media-category.media-category': ApiMediaCategoryMediaCategory;
       'api::media-page.media-page': ApiMediaPageMediaPage;

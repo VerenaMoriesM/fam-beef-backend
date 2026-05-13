@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_farm_strengths",
+  "info": {
+    "displayName": "Farm Strength",
+    "icon": "bold",
+    "description": "The Beef Production strength section on the Farms page"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "bodyText": {
+      "type": "text"
+    },
+    "stampLabel": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

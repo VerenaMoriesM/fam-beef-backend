@@ -528,6 +528,60 @@ export const SEED_ABOUT_PAGE = {
   }
 };
 
+export const SEED_FARM_PAGE = {
+  hero: {
+    title: "Where Quality Is Raised From The Start",
+    description:
+      "We raise livestock in controlled environments with responsible care ensuring quality starts long before processing.",
+    ctaLabel: "Let's Talk",
+    ctaHref: "/contact",
+  },
+  calf: {
+    badge: "FAM Calf",
+    title: "Strong Starts Make Better Outcomes",
+    description:
+      "Calves are raised in clean, monitored spaces designed to support comfort, safety, and stable growth.",
+    backgroundColor: "bg-white",
+  },
+  environment: {
+    badge: "About The Farm",
+    title: "Controlled Environment",
+    description:
+      "Our feeding programs are built on consistency and care. We know the source of every ingredient, monitor intake closely, and adjust for each animal's needs as they grow.",
+    features: [
+      "Balanced feed from our trusted crops",
+      "Daily supervision of their health",
+      "Quality inputs, quality outcomes",
+    ],
+  },
+  strength: {
+    subtitle: "Al Aela",
+    title: "Beef Production, Built On Strength",
+    bodyText:
+      "At Al Aela farms, buffalo and livestock are raised to maturity under structured conditions for beef production, ensuring strength, health, and consistent quality.",
+    stampLabel: "Proven Standards",
+  },
+  livestock: {
+    badge: "Raising Livestock to Full Maturity",
+    title: "100% Freshly Frozen Beef Production",
+    description:
+      "Al Aela farms specialize in raising buffalo and livestock for beef production. Through controlled environments and consistent care, animals reach maturity under conditions that support reliable quality and performance.",
+    backgroundColor: "bg-[#F3F3F5]",
+  },
+  cta: {
+    badge: "Get In Touch",
+    title: "Ready To Partner",
+    description: "Let's talk about bringing premium, full-cycle beef to your business.",
+    cta_label: "Let's Talk",
+    cta_href: "/contact",
+  },
+  seo: {
+    metaTitle: "FAM Farms | FAM Beef",
+    metaDescription:
+      "Visit FAM Farms — where quality Baladi beef starts. Controlled environments, responsible care, and full-cycle production from calf to final cut.",
+  },
+};
+
 export const SEED_BRAND_PAGE = {
   hero: {
     breadcrumb: "Our Brands",

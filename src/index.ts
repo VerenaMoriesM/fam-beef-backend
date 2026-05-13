@@ -15,6 +15,7 @@ import {
   SEED_PRODUCT_PAGE,
   SEED_ABOUT_PAGE,
   SEED_BRAND_PAGE,
+  SEED_FARM_PAGE,
 } from './seed-data';
 
 export default {
@@ -256,6 +257,21 @@ export default {
       await strapi.documents('api::about-page.about-page').create({
         data: SEED_ABOUT_PAGE,
         status: 'published'
+      });
+    }
+
+    // Farm Page (Single Type)
+    const farmPage = await strapi.documents('api::farm-page.farm-page').findFirst();
+    if (farmPage) {
+      await strapi.documents('api::farm-page.farm-page').update({
+        documentId: farmPage.documentId,
+        data: SEED_FARM_PAGE,
+        status: 'published',
+      });
+    } else {
+      await strapi.documents('api::farm-page.farm-page').create({
+        data: SEED_FARM_PAGE,
+        status: 'published',
       });
     }
 

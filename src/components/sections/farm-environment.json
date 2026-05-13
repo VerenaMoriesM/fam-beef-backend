@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_farm_environments",
+  "info": {
+    "displayName": "Farm Environment",
+    "icon": "leaf",
+    "description": "The Controlled Environment section on the Farms page"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "features": {
+      "type": "json"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

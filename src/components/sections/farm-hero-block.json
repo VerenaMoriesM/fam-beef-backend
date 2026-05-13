@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_farm_hero_blocks",
+  "info": {
+    "displayName": "Farm Hero Block",
+    "icon": "layout",
+    "description": "Text content for the Farm page hero section"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}
