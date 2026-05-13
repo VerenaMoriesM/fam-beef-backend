@@ -622,6 +622,75 @@ export interface ApiCareerPageCareerPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactInquiryContactInquiry
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_inquiries';
+  info: {
+    description: 'Messages submitted via the Contact Us form';
+    displayName: 'Contact Inquiry';
+    pluralName: 'contact-inquiries';
+    singularName: 'contact-inquiry';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-inquiry.contact-inquiry'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    purpose: Schema.Attribute.Enumeration<['b2b', 'partnership', 'support']>;
+    status: Schema.Attribute.Enumeration<['new', 'read', 'replied']> &
+      Schema.Attribute.DefaultTo<'new'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
+  collectionName: 'contact_pages';
+  info: {
+    description: 'Content for the Contact Us page';
+    displayName: 'Contact Page';
+    pluralName: 'contact-pages';
+    singularName: 'contact-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'sections.contact-hero', false>;
+    info: Schema.Attribute.Component<'sections.contact-info', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-page.contact-page'
+    > &
+      Schema.Attribute.Private;
+    map: Schema.Attribute.Component<'sections.contact-map', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
   collectionName: 'faq_pages';
   info: {
@@ -1611,6 +1680,8 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::career-application.career-application': ApiCareerApplicationCareerApplication;
       'api::career-page.career-page': ApiCareerPageCareerPage;
+      'api::contact-inquiry.contact-inquiry': ApiContactInquiryContactInquiry;
+      'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::faq-page.faq-page': ApiFaqPageFaqPage;
       'api::faq.faq': ApiFaqFaq;
       'api::farm-page.farm-page': ApiFarmPageFarmPage;

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_contact_infos",
+  "info": {
+    "displayName": "Contact Info",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

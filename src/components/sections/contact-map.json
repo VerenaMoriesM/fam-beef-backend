@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_sections_contact_maps",
+  "info": {
+    "displayName": "Contact Map",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "googleMapsUrl": {
+      "type": "string"
+    }
+  }
+}

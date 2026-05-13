@@ -673,3 +673,24 @@ export const SEED_BRAND_PAGE = {
       "Explore FAM Beef brand lines — from fresh Baladi beef to marinated cuts and deli cold cuts. Each brand built on full-cycle quality and trust.",
   },
 };
+
+export const SEED_CONTACT_PAGE = {
+  hero: {
+    badge: "Contact Us",
+    title: "Send Your Inquiry",
+  },
+  info: {
+    title: "Our Contacts",
+    email: "info@fambeef.com",
+    phone: "+201001234567",
+    address: "6th of October City, Giza, Egypt",
+  },
+  map: {
+    googleMapsUrl: "https://maps.google.com/?q=6th+of+October+City,+Giza,+Egypt",
+  },
+  seo: {
+    metaTitle: "Contact Us | FAM Beef",
+    metaDescription:
+      "Get in touch with FAM Beef. Send us your B2B inquiries, partnership requests, or customer support questions.",
+  },
+};

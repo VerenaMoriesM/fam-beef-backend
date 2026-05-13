@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_pages",
+  "info": {
+    "singularName": "contact-page",
+    "pluralName": "contact-pages",
+    "displayName": "Contact Page",
+    "description": "Content for the Contact Us page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contact-hero"
+    },
+    "info": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contact-info"
+    },
+    "map": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contact-map"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

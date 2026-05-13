@@ -127,6 +127,45 @@ export interface SectionsCareersHowWeWork extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionsContactHero extends Struct.ComponentSchema {
+  collectionName: 'components_sections_contact_heroes';
+  info: {
+    displayName: 'Contact Hero';
+    icon: 'phone';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    bgImage: Schema.Attribute.Media<'images'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_sections_contact_infos';
+  info: {
+    displayName: 'Contact Info';
+    icon: 'information';
+  };
+  attributes: {
+    address: Schema.Attribute.String;
+    email: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
+    phone: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface SectionsContactMap extends Struct.ComponentSchema {
+  collectionName: 'components_sections_contact_maps';
+  info: {
+    displayName: 'Contact Map';
+    icon: 'pinMap';
+  };
+  attributes: {
+    googleMapsUrl: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsCta extends Struct.ComponentSchema {
   collectionName: 'components_sections_ctas';
   info: {
@@ -452,6 +491,9 @@ declare module '@strapi/strapi' {
       'sections.careers-apply': SectionsCareersApply;
       'sections.careers-hero': SectionsCareersHero;
       'sections.careers-how-we-work': SectionsCareersHowWeWork;
+      'sections.contact-hero': SectionsContactHero;
+      'sections.contact-info': SectionsContactInfo;
+      'sections.contact-map': SectionsContactMap;
       'sections.cta': SectionsCta;
       'sections.cta-section': SectionsCtaSection;
       'sections.farm-environment': SectionsFarmEnvironment;
