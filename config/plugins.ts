@@ -14,12 +14,6 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
       locales: ['en', 'ar'],
     },
   },
-  'populate-deep': {
-    enabled: true,
-    config: {
-      defaultDepth: 5,
-    },
-  },
   upload: {
     config: {
       provider: '@strapi/provider-upload-aws-s3',
