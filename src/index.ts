@@ -40,22 +40,25 @@ export default {
   async bootstrap({ strapi }: { strapi: any }) {
 
     // ─── SINGLE TYPES — always upsert so new fields get populated on every restart ───
+    // Run all in parallel to avoid slow sequential DB round-trips on startup
     console.log('Upserting single-type page content...');
 
-    await upsertSingleType(strapi, 'api::home-page.home-page',       SEED_HOME_PAGE);
-    await upsertSingleType(strapi, 'api::faq-page.faq-page',         SEED_FAQ_PAGE);
-    await upsertSingleType(strapi, 'api::recipe-page.recipe-page',   SEED_RECIPE_PAGE);
-    await upsertSingleType(strapi, 'api::product-page.product-page', SEED_PRODUCT_PAGE);
-    await upsertSingleType(strapi, 'api::media-page.media-page',     SEED_MEDIA_PAGE);
-    await upsertSingleType(strapi, 'api::about-page.about-page',     SEED_ABOUT_PAGE);
-    await upsertSingleType(strapi, 'api::career-page.career-page',   SEED_CAREER_PAGE);
-    await upsertSingleType(strapi, 'api::farm-page.farm-page',       SEED_FARM_PAGE);
-    await upsertSingleType(strapi, 'api::brand-page.brand-page',     SEED_BRAND_PAGE);
-    await upsertSingleType(strapi, 'api::contact-page.contact-page', SEED_CONTACT_PAGE);
-    await upsertSingleType(strapi, 'api::terms-page.terms-page',     SEED_TERMS_PAGE);
-    await upsertSingleType(strapi, 'api::privacy-page.privacy-page', SEED_PRIVACY_PAGE);
-    await upsertSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING);
-    await upsertSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING);
+    await Promise.all([
+      upsertSingleType(strapi, 'api::home-page.home-page',           SEED_HOME_PAGE),
+      upsertSingleType(strapi, 'api::faq-page.faq-page',             SEED_FAQ_PAGE),
+      upsertSingleType(strapi, 'api::recipe-page.recipe-page',       SEED_RECIPE_PAGE),
+      upsertSingleType(strapi, 'api::product-page.product-page',     SEED_PRODUCT_PAGE),
+      upsertSingleType(strapi, 'api::media-page.media-page',         SEED_MEDIA_PAGE),
+      upsertSingleType(strapi, 'api::about-page.about-page',         SEED_ABOUT_PAGE),
+      upsertSingleType(strapi, 'api::career-page.career-page',       SEED_CAREER_PAGE),
+      upsertSingleType(strapi, 'api::farm-page.farm-page',           SEED_FARM_PAGE),
+      upsertSingleType(strapi, 'api::brand-page.brand-page',         SEED_BRAND_PAGE),
+      upsertSingleType(strapi, 'api::contact-page.contact-page',     SEED_CONTACT_PAGE),
+      upsertSingleType(strapi, 'api::terms-page.terms-page',         SEED_TERMS_PAGE),
+      upsertSingleType(strapi, 'api::privacy-page.privacy-page',     SEED_PRIVACY_PAGE),
+      upsertSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING),
+      upsertSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING),
+    ]);
 
     console.log('Single-type pages upserted.');
 
