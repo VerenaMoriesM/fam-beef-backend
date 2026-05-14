@@ -24,14 +24,13 @@ import {
   SEED_PRIVACY_PAGE,
 } from './seed-data';
 
-/** Upsert a single-type (finds it then updates, or creates if missing). */
-async function upsertSingleType(strapi: any, uid: string, data: object) {
+/** Seed a single-type only if it doesn't exist yet (create-once, never overwrite). */
+async function seedSingleType(strapi: any, uid: string, data: object) {
   const existing = await strapi.documents(uid).findFirst();
-  if (existing) {
-    await strapi.documents(uid).update({ documentId: existing.documentId, data, status: 'published' });
-  } else {
+  if (!existing) {
     await strapi.documents(uid).create({ data, status: 'published' });
   }
+  // If it already exists, leave it untouched so manually-set images/content are preserved
 }
 
 export default {
@@ -39,29 +38,29 @@ export default {
 
   async bootstrap({ strapi }: { strapi: any }) {
 
-    // ─── SINGLE TYPES — upsert in background so server starts immediately ───────────
-    // Do NOT await — bootstrap returns fast, upserts finish in the background.
-    // Sequential to avoid concurrent-query warnings from the pg client.
-    console.log('Scheduling single-type page upserts in background...');
+    // ─── SINGLE TYPES — seed once in background, never overwrite existing content ──
+    // Do NOT await — bootstrap returns fast, seeds finish in the background.
+    // Existing pages are left untouched so manually-set images are preserved.
+    console.log('Seeding single-type pages (create-once)...');
     (async () => {
       try {
-        await upsertSingleType(strapi, 'api::home-page.home-page',           SEED_HOME_PAGE);
-        await upsertSingleType(strapi, 'api::faq-page.faq-page',             SEED_FAQ_PAGE);
-        await upsertSingleType(strapi, 'api::recipe-page.recipe-page',       SEED_RECIPE_PAGE);
-        await upsertSingleType(strapi, 'api::product-page.product-page',     SEED_PRODUCT_PAGE);
-        await upsertSingleType(strapi, 'api::media-page.media-page',         SEED_MEDIA_PAGE);
-        await upsertSingleType(strapi, 'api::about-page.about-page',         SEED_ABOUT_PAGE);
-        await upsertSingleType(strapi, 'api::career-page.career-page',       SEED_CAREER_PAGE);
-        await upsertSingleType(strapi, 'api::farm-page.farm-page',           SEED_FARM_PAGE);
-        await upsertSingleType(strapi, 'api::brand-page.brand-page',         SEED_BRAND_PAGE);
-        await upsertSingleType(strapi, 'api::contact-page.contact-page',     SEED_CONTACT_PAGE);
-        await upsertSingleType(strapi, 'api::terms-page.terms-page',         SEED_TERMS_PAGE);
-        await upsertSingleType(strapi, 'api::privacy-page.privacy-page',     SEED_PRIVACY_PAGE);
-        await upsertSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING);
-        await upsertSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING);
-        console.log('Single-type pages upserted.');
+        await seedSingleType(strapi, 'api::home-page.home-page',           SEED_HOME_PAGE);
+        await seedSingleType(strapi, 'api::faq-page.faq-page',             SEED_FAQ_PAGE);
+        await seedSingleType(strapi, 'api::recipe-page.recipe-page',       SEED_RECIPE_PAGE);
+        await seedSingleType(strapi, 'api::product-page.product-page',     SEED_PRODUCT_PAGE);
+        await seedSingleType(strapi, 'api::media-page.media-page',         SEED_MEDIA_PAGE);
+        await seedSingleType(strapi, 'api::about-page.about-page',         SEED_ABOUT_PAGE);
+        await seedSingleType(strapi, 'api::career-page.career-page',       SEED_CAREER_PAGE);
+        await seedSingleType(strapi, 'api::farm-page.farm-page',           SEED_FARM_PAGE);
+        await seedSingleType(strapi, 'api::brand-page.brand-page',         SEED_BRAND_PAGE);
+        await seedSingleType(strapi, 'api::contact-page.contact-page',     SEED_CONTACT_PAGE);
+        await seedSingleType(strapi, 'api::terms-page.terms-page',         SEED_TERMS_PAGE);
+        await seedSingleType(strapi, 'api::privacy-page.privacy-page',     SEED_PRIVACY_PAGE);
+        await seedSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING);
+        await seedSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING);
+        console.log('Single-type page seeding complete.');
       } catch (err) {
-        console.error('Background upsert error:', err);
+        console.error('Background seed error:', err);
       }
     })();
 
