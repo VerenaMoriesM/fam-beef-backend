@@ -174,7 +174,10 @@ export interface SectionsCareersHowWeWork extends Struct.ComponentSchema {
   attributes: {
     badge: Schema.Attribute.String;
     title: Schema.Attribute.String;
-    values: Schema.Attribute.Component<'sections.careers-how-we-work-value', true>;
+    values: Schema.Attribute.Component<
+      'sections.careers-how-we-work-value',
+      true
+    >;
   };
 }
 
@@ -187,7 +190,7 @@ export interface SectionsCareersHowWeWorkValue extends Struct.ComponentSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images', false>;
+    image: Schema.Attribute.Media<'images'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['card', 'image']> &
       Schema.Attribute.Required &
