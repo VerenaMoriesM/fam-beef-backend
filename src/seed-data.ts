@@ -594,19 +594,10 @@ export const SEED_CAREER_PAGE = {
   howWeWork: {
     badge: "Life At Fam Beef",
     title: "How We Work Together",
-    cards: [
-      {
-        badge: "Collaboration",
-        title: "We Work As One Unified Team",
-      },
-      {
-        badge: "Learning",
-        title: "We Teach What We Know",
-      },
-      {
-        badge: "Community",
-        title: "You're Part Of Something Larger",
-      },
+    values: [
+      { type: "card", badge: "Collaboration", title: "We Work As One Unified Team" },
+      { type: "card", badge: "Learning", title: "We Teach What We Know" },
+      { type: "card", badge: "Community", title: "You're Part Of Something Larger" },
     ],
   },
   apply: {

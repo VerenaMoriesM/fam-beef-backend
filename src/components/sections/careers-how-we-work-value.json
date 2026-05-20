@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_careers_how_we_work_values",
+  "info": {
+    "displayName": "Careers How We Work Value",
+    "icon": "layout",
+    "description": "A single value item — either a text card or an image"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["card", "image"],
+      "required": true,
+      "default": "card"
+    },
+    "title": {
+      "type": "string"
+    },
+    "badge": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

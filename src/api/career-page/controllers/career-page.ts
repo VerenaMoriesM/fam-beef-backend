@@ -6,7 +6,7 @@ export default factories.createCoreController('api::career-page.career-page', ()
       populate: {
         hero: { populate: { image: true } },
         feature: { populate: { image: true } },
-        howWeWork: { populate: { images: true } },
+        howWeWork: { populate: { values: { populate: { image: true } } } },
         apply: { populate: { image: true } },
         seo: { populate: '*' },
       },
