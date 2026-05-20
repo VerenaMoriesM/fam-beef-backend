@@ -167,15 +167,31 @@ export interface SectionsCareersHero extends Struct.ComponentSchema {
 export interface SectionsCareersHowWeWork extends Struct.ComponentSchema {
   collectionName: 'components_sections_careers_how_we_works';
   info: {
-    description: 'How We Work Together section \u2014 section title + card texts + gallery photos';
+    description: 'How We Work Together section \u2014 badge, title, and mixed card/image values';
     displayName: 'Careers How We Work';
     icon: 'grid';
   };
   attributes: {
     badge: Schema.Attribute.String;
-    cards: Schema.Attribute.JSON;
-    images: Schema.Attribute.Media<'images', true>;
     title: Schema.Attribute.String;
+    values: Schema.Attribute.Component<'sections.careers-how-we-work-value', true>;
+  };
+}
+
+export interface SectionsCareersHowWeWorkValue extends Struct.ComponentSchema {
+  collectionName: 'components_sections_careers_how_we_work_values';
+  info: {
+    description: 'A single value item \u2014 either a text card or an image';
+    displayName: 'Careers How We Work Value';
+    icon: 'layout';
+  };
+  attributes: {
+    badge: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images', false>;
+    title: Schema.Attribute.String;
+    type: Schema.Attribute.Enumeration<['card', 'image']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'card'>;
   };
 }
 
@@ -632,6 +648,7 @@ declare module '@strapi/strapi' {
       'sections.careers-apply': SectionsCareersApply;
       'sections.careers-hero': SectionsCareersHero;
       'sections.careers-how-we-work': SectionsCareersHowWeWork;
+      'sections.careers-how-we-work-value': SectionsCareersHowWeWorkValue;
       'sections.contact-hero': SectionsContactHero;
       'sections.contact-info': SectionsContactInfo;
       'sections.contact-map': SectionsContactMap;
