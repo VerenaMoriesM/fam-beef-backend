@@ -1,0 +1,90 @@
+{
+  "kind": "singleType",
+  "collectionName": "process_pages",
+  "info": {
+    "singularName": "process-page",
+    "pluralName": "process-pages",
+    "displayName": "Process Page",
+    "description": "Dynamic content for the Our Process page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.process-hero",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "qualityCommitment": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.quality-commitment",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "spotlight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.process-spotlight",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "processing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.processing-section",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "packaging": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.packaging-section",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.cta-section",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    }
+  }
+}

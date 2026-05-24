@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_processing_sections",
+  "info": {
+    "displayName": "Processing Section",
+    "icon": "filter",
+    "description": "Controlled Freezing / Processing section with badge, title, description, bullet points, two gallery images and a stamp label"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "points": {
+      "type": "json"
+    },
+    "stampLabel": {
+      "type": "string"
+    },
+    "imageLeft": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "imageRight": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

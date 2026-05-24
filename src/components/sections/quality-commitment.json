@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_sections_quality_commitments",
+  "info": {
+    "displayName": "Quality Commitment",
+    "icon": "check",
+    "description": "Quality commitment section with badge, title, description, bullet points and background image"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "points": {
+      "type": "json"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

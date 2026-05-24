@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_sections_process_heroes",
+  "info": {
+    "displayName": "Process Hero",
+    "icon": "layout",
+    "description": "Hero section for the Process page"
+  },
+  "options": {},
+  "attributes": {
+    "badge": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaLabel": {
+      "type": "string"
+    },
+    "ctaHref": {
+      "type": "string"
+    }
+  }
+}
