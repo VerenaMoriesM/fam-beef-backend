@@ -507,21 +507,6 @@ export interface SectionsOverview extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsPackagingSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_packaging_sections';
-  info: {
-    description: 'Packaging section with badge, title, description and image';
-    displayName: 'Packaging Section';
-    icon: 'cube';
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String;
-  };
-}
-
 export interface SectionsPartnersWrapper extends Struct.ComponentSchema {
   collectionName: 'components_sections_partners_wrappers';
   info: {
@@ -530,40 +515,6 @@ export interface SectionsPartnersWrapper extends Struct.ComponentSchema {
   };
   attributes: {
     badge: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsProcessHero extends Struct.ComponentSchema {
-  collectionName: 'components_sections_process_heroes';
-  info: {
-    description: 'Hero section for the Process page';
-    displayName: 'Process Hero';
-    icon: 'layout';
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    ctaHref: Schema.Attribute.String;
-    ctaLabel: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsProcessSpotlight extends Struct.ComponentSchema {
-  collectionName: 'components_sections_process_spotlights';
-  info: {
-    description: 'Process spotlight section with badge, title, description, bullet points, CTA and video/image';
-    displayName: 'Process Spotlight';
-    icon: 'star';
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    ctaHref: Schema.Attribute.String;
-    ctaLabel: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images' | 'videos'>;
-    points: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
   };
 }
@@ -577,40 +528,6 @@ export interface SectionsProcessWrapper extends Struct.ComponentSchema {
   attributes: {
     badge: Schema.Attribute.String;
     description: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsProcessingSection extends Struct.ComponentSchema {
-  collectionName: 'components_sections_processing_sections';
-  info: {
-    description: 'Controlled Freezing / Processing section with badge, title, description, bullet points, two gallery images and a stamp label';
-    displayName: 'Processing Section';
-    icon: 'filter';
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    imageLeft: Schema.Attribute.Media<'images'>;
-    imageRight: Schema.Attribute.Media<'images'>;
-    points: Schema.Attribute.JSON;
-    stampLabel: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-  };
-}
-
-export interface SectionsQualityCommitment extends Struct.ComponentSchema {
-  collectionName: 'components_sections_quality_commitments';
-  info: {
-    description: 'Quality commitment section with badge, title, description, bullet points and background image';
-    displayName: 'Quality Commitment';
-    icon: 'check';
-  };
-  attributes: {
-    badge: Schema.Attribute.String;
-    description: Schema.Attribute.Text;
-    image: Schema.Attribute.Media<'images'>;
-    points: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
   };
 }
@@ -756,13 +673,8 @@ declare module '@strapi/strapi' {
       'sections.method-step': SectionsMethodStep;
       'sections.mission-vision': SectionsMissionVision;
       'sections.overview': SectionsOverview;
-      'sections.packaging-section': SectionsPackagingSection;
       'sections.partners-wrapper': SectionsPartnersWrapper;
-      'sections.process-hero': SectionsProcessHero;
-      'sections.process-spotlight': SectionsProcessSpotlight;
       'sections.process-wrapper': SectionsProcessWrapper;
-      'sections.processing-section': SectionsProcessingSection;
-      'sections.quality-commitment': SectionsQualityCommitment;
       'sections.recipes-wrapper': SectionsRecipesWrapper;
       'sections.stat-item': SectionsStatItem;
       'sections.story-section': SectionsStorySection;
