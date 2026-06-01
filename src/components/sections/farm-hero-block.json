@@ -18,6 +18,16 @@
     },
     "ctaHref": {
       "type": "string"
+    },
+    "row1Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "row2Images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
     }
   }
 }

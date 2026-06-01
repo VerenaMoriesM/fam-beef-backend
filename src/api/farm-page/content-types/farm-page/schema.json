@@ -66,6 +66,16 @@
         }
       }
     },
+    "process": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.process-wrapper",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
     "cta": {
       "type": "component",
       "repeatable": false,

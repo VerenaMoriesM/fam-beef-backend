@@ -813,6 +813,12 @@ export interface ApiFaqPageFaqPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'sections.cta-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
     description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -931,6 +937,12 @@ export interface ApiFarmPageFarmPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::farm-page.farm-page'
     >;
+    process: Schema.Attribute.Component<'sections.process-wrapper', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     seo: Schema.Attribute.Component<'shared.seo', false> &
       Schema.Attribute.SetPluginOptions<{
@@ -1402,6 +1414,86 @@ export interface ApiPrivacyPagePrivacyPage extends Struct.SingleTypeSchema {
         };
       }>;
     titleHighlight: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProcessPageProcessPage extends Struct.SingleTypeSchema {
+  collectionName: 'process_pages';
+  info: {
+    description: 'Dynamic content for the Our Process page';
+    displayName: 'Process Page';
+    pluralName: 'process-pages';
+    singularName: 'process-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cta: Schema.Attribute.Component<'sections.cta-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    hero: Schema.Attribute.Component<'sections.process-hero', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::process-page.process-page'
+    >;
+    packaging: Schema.Attribute.Component<'sections.packaging-section', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    processing: Schema.Attribute.Component<
+      'sections.processing-section',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    qualityCommitment: Schema.Attribute.Component<
+      'sections.quality-commitment',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    seo: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localizable: true;
+        };
+      }>;
+    spotlight: Schema.Attribute.Component<'sections.process-spotlight', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localizable: true;
@@ -2268,6 +2360,7 @@ declare module '@strapi/strapi' {
       'api::navbar-setting.navbar-setting': ApiNavbarSettingNavbarSetting;
       'api::partner.partner': ApiPartnerPartner;
       'api::privacy-page.privacy-page': ApiPrivacyPagePrivacyPage;
+      'api::process-page.process-page': ApiProcessPageProcessPage;
       'api::process-step.process-step': ApiProcessStepProcessStep;
       'api::product-page.product-page': ApiProductPageProductPage;
       'api::product.product': ApiProductProduct;

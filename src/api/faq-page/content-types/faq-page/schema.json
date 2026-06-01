@@ -40,6 +40,16 @@
         }
       }
     },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.cta-section",
+      "pluginOptions": {
+        "i18n": {
+          "localizable": true
+        }
+      }
+    },
     "seo": {
       "type": "component",
       "repeatable": false,
