@@ -30,6 +30,10 @@
     "time": {
       "type": "string"
     },
+    "featured": {
+      "type": "boolean",
+      "default": true
+    },
     "overview": {
       "type": "text"
     },

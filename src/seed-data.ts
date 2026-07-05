@@ -256,6 +256,7 @@ export const SEED_RECIPES = [
     title: "Cairo-Style caramelized glazed beef strips",
     slug: "cairo-beef-strips",
     time: "15 Mins Cooking",
+    featured: true,
     overview: "Experience the authentic taste of Cairo street food with our signature caramelized beef strips. This recipe highlights the natural richness of baladi beef, enhanced by a sweet and savory glaze that's perfect for any weeknight dinner.",
     ingredientsSections: [
       {
@@ -289,6 +290,7 @@ export const SEED_RECIPES = [
     title: "Creamy garlic beef pasta with meat chunks",
     slug: "beef-pasta",
     time: "20 Mins Cooking",
+    featured: true,
     overview: "A luxurious and comforting meal that combines tender beef chunks with a velvety garlic cream sauce. Perfect for family gatherings or a cozy night in.",
     ingredientsSections: [
       {
@@ -325,6 +327,7 @@ export const SEED_MEDIA_POSTS = [
     title: "FAM Beef Expands to New Regions in Delta",
     description: "Our commitment to quality continues as we partner with more local farms.",
     badge: "News",
+    featured: true,
     date: "2024-05-10",
     slug: "expansion",
     category: "News",
@@ -339,6 +342,7 @@ export const SEED_MEDIA_POSTS = [
     title: "Farm Tour And Tasting Event This Spring",
     description: "Visit our farms and taste the difference firsthand with us.",
     badge: "Event",
+    featured: true,
     date: "2026-02-07",
     slug: "tour",
     category: "Events",
@@ -351,6 +355,7 @@ export const SEED_MEDIA_POSTS = [
     title: "Fam Beef Expands Distribution Network",
     description: "New partnerships bring organic beef to more retailers nationwide.",
     badge: "Blog",
+    featured: true,
     date: "2026-02-07",
     slug: "organic",
     category: "Blog",

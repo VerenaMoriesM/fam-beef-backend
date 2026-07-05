@@ -21,6 +21,10 @@
     "badge": {
       "type": "string"
     },
+    "featured": {
+      "type": "boolean",
+      "default": true
+    },
     "date": {
       "type": "date"
     },
