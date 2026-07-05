@@ -1255,7 +1255,7 @@ export interface ApiMediaPostMediaPost extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::media-category.media-category'
     >;
-    content: Schema.Attribute.Component<'shared.content-block', true>;
+    content: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

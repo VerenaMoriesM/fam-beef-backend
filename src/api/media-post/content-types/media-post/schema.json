@@ -42,9 +42,7 @@
       "inversedBy": "media_posts"
     },
     "content": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.content-block"
+      "type": "blocks"
     },
     "seo": {
       "type": "component",

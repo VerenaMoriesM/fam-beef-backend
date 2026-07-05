@@ -329,14 +329,10 @@ export const SEED_MEDIA_POSTS = [
     slug: "expansion",
     category: "News",
     content: [
-      {
-        title: "Strategic Expansion",
-        text: "Fam Beef has announced the expansion of its organic production capacity, marking an important step in meeting growing market demand."
-      },
-      {
-        title: "Quality Control",
-        text: "The expansion reinforces Fam Beef's fully in-house model, covering agriculture, livestock care, processing, and packaging."
-      }
+      { type: "heading", level: 3, children: [{ type: "text", text: "Strategic Expansion" }] },
+      { type: "paragraph", children: [{ type: "text", text: "Fam Beef has announced the expansion of its organic production capacity, marking an important step in meeting growing market demand." }] },
+      { type: "heading", level: 3, children: [{ type: "text", text: "Quality Control" }] },
+      { type: "paragraph", children: [{ type: "text", text: "The expansion reinforces Fam Beef's fully in-house model, covering agriculture, livestock care, processing, and packaging." }] }
     ]
   },
   {
@@ -347,10 +343,8 @@ export const SEED_MEDIA_POSTS = [
     slug: "tour",
     category: "Events",
     content: [
-      {
-        title: "Join Us This Spring",
-        text: "We are opening our doors for a special farm tour and tasting event. Experience the beauty of our pastures and the quality of our Baladi beef."
-      }
+      { type: "heading", level: 3, children: [{ type: "text", text: "Join Us This Spring" }] },
+      { type: "paragraph", children: [{ type: "text", text: "We are opening our doors for a special farm tour and tasting event. Experience the beauty of our pastures and the quality of our Baladi beef." }] }
     ]
   },
   {
@@ -361,10 +355,8 @@ export const SEED_MEDIA_POSTS = [
     slug: "organic",
     category: "Blog",
     content: [
-      {
-        title: "New Retail Partners",
-        text: "We are excited to announce new partnerships with leading retailers across Egypt, making it easier for you to find our premium products."
-      }
+      { type: "heading", level: 3, children: [{ type: "text", text: "New Retail Partners" }] },
+      { type: "paragraph", children: [{ type: "text", text: "We are excited to announce new partnerships with leading retailers across Egypt, making it easier for you to find our premium products." }] }
     ]
   }
 ];
