@@ -1,0 +1,24 @@
+{
+  "name": "contact-inquiry-export",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Adds an Export to Excel button for the Contact Inquiry collection type",
+  "strapi": {
+    "kind": "plugin",
+    "name": "contact-inquiry-export",
+    "displayName": "Contact Inquiry Export"
+  },
+  "exports": {
+    "./strapi-admin": {
+      "source": "./admin/src/index.tsx",
+      "import": "./admin/src/index.tsx",
+      "default": "./admin/src/index.tsx"
+    },
+    "./strapi-server": {
+      "source": "./server/index.js",
+      "require": "./server/index.js",
+      "default": "./server/index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}

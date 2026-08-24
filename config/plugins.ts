@@ -4,6 +4,10 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Plugin =>
   cloud: {
     enabled: false,
   },
+  'contact-inquiry-export': {
+    enabled: true,
+    resolve: './src/plugins/contact-inquiry-export',
+  },
   'content-type-builder': {
     enabled: true,
   },
