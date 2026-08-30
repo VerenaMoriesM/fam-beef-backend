@@ -10,6 +10,7 @@
     "instagram": { "type": "string" },
     "twitter": { "type": "string" },
     "linkedin": { "type": "string" },
-    "youtube": { "type": "string" }
+    "youtube": { "type": "string" },
+    "tiktok": { "type": "string" }
   }
 }

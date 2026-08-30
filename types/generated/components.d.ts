@@ -22,6 +22,7 @@ export interface GlobalFooterSocialLinks extends Struct.ComponentSchema {
     facebook: Schema.Attribute.String;
     instagram: Schema.Attribute.String;
     linkedin: Schema.Attribute.String;
+    tiktok: Schema.Attribute.String;
     twitter: Schema.Attribute.String;
     youtube: Schema.Attribute.String;
   };
