@@ -448,7 +448,7 @@ export interface SectionsLegalSection extends Struct.ComponentSchema {
     icon: 'file';
   };
   attributes: {
-    body: Schema.Attribute.Text & Schema.Attribute.Required;
+    body: Schema.Attribute.Blocks & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }

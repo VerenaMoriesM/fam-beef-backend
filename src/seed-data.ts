@@ -782,19 +782,59 @@ export const SEED_TERMS_PAGE = {
   sections: [
     {
       title: "Agreement to Terms",
-      body: "By accessing or using Fam Beef's services, you agree to be bound by these Terms of Service. These terms apply to all visitors, users, and others who access or use the Service.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "By accessing or using Fam Beef's services, you agree to be bound by these Terms of Service. These terms apply to all visitors, users, and others who access or use the Service.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Intellectual Property",
-      body: "The Service and its original content, features, and functionality are and will remain the exclusive property of Fam Beef and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Fam Beef.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "The Service and its original content, features, and functionality are and will remain the exclusive property of Fam Beef and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Fam Beef.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Termination",
-      body: "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Governing Law",
-      body: "These Terms shall be governed and construed in accordance with the laws of Egypt, without regard to its conflict of law provisions.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "These Terms shall be governed and construed in accordance with the laws of Egypt, without regard to its conflict of law provisions.",
+            },
+          ],
+        },
+      ],
     },
   ],
   seo: {
@@ -813,19 +853,59 @@ export const SEED_PRIVACY_PAGE = {
   sections: [
     {
       title: "Introduction",
-      body: "At Fam Beef, we are committed to protecting the privacy of our customers and visitors. This policy describes how we collect, use, and safeguard your information when you interact with our website, products, and services.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "At Fam Beef, we are committed to protecting the privacy of our customers and visitors. This policy describes how we collect, use, and safeguard your information when you interact with our website, products, and services.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Information Collection",
-      body: "We collect information that helps us provide a better experience for you. This includes direct information you provide when registering, ordering, or contacting us (name, email, phone, address), as well as usage data such as IP address, browser type, and page interactions.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "We collect information that helps us provide a better experience for you. This includes direct information you provide when registering, ordering, or contacting us (name, email, phone, address), as well as usage data such as IP address, browser type, and page interactions.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Data Security",
-      body: "We implement industry-standard security measures to ensure the safety of your personal information. Your data is stored on secure servers and access is limited to authorized personnel only.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "We implement industry-standard security measures to ensure the safety of your personal information. Your data is stored on secure servers and access is limited to authorized personnel only.",
+            },
+          ],
+        },
+      ],
     },
     {
       title: "Your Rights",
-      body: "You have the right to access, correct, or delete your personal information at any time. If you wish to exercise these rights, please reach out to our privacy team.",
+      body: [
+        {
+          type: "paragraph",
+          children: [
+            {
+              type: "text",
+              text: "You have the right to access, correct, or delete your personal information at any time. If you wish to exercise these rights, please reach out to our privacy team.",
+            },
+          ],
+        },
+      ],
     },
   ],
   seo: {
