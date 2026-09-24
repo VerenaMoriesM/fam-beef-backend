@@ -60,6 +60,13 @@
       "type": "component",
       "repeatable": true,
       "component": "sections.accordion-item"
+    },
+    "stampImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

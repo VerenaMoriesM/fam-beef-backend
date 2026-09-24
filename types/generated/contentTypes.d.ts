@@ -1632,6 +1632,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     overview: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
+    stampImage: Schema.Attribute.Media<'images'>;
     storage: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
