@@ -21,6 +21,10 @@
     },
     "category": {
       "type": "string"
+    },
+    "showOnHome": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

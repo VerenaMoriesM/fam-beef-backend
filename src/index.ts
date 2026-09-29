@@ -59,6 +59,15 @@ export default {
         await seedSingleType(strapi, 'api::navbar-setting.navbar-setting', SEED_NAVBAR_SETTING);
         await seedSingleType(strapi, 'api::footer-setting.footer-setting', SEED_FOOTER_SETTING);
         console.log('Single-type page seeding complete.');
+
+        // Product category order (create-once per name; never overwrite manual ordering)
+        const PRODUCT_CATEGORY_ORDER = ['Baladi Cuts', 'Processed Meat', 'Ready To Cook'];
+        for (const [i, name] of PRODUCT_CATEGORY_ORDER.entries()) {
+          const found = await strapi.documents('api::product-category.product-category').findFirst({ filters: { name } });
+          if (!found) {
+            await strapi.documents('api::product-category.product-category').create({ data: { name, order: i + 1 } });
+          }
+        }
       } catch (err) {
         console.error('Background seed error:', err);
       }
